@@ -1,5 +1,6 @@
 .idea/
 *.afdesign
-
+*.afphoto
+*.afphoto~lock~
 *.afdesign~lock~
 .DS_Store

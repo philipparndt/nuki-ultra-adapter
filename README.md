@@ -13,3 +13,8 @@ I use a `Keso 8000` Lock, that I like to use with the Nuki Ultra.
 ![Gear 1](./nuki-gear-1.png)
 ![Gear 2](./nuki-gear-2.png)
 ![Gear 2](./nuki-gear-3.png)
+
+
+#### Self-made Gear
+
+![gear-test.png](gear-test.png)
