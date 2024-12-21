@@ -18,3 +18,9 @@ I use a `Keso 8000` Lock, that I like to use with the Nuki Ultra.
 #### Self-made Gear
 
 ![gear-test.png](gear-test.png)
+
+## Keso 8000 Adapter
+
+- Status: `Prototype ordered`
+- OpenSCAD: [keso-gear-adapter.scad](keso-gear-adapter.scad)
+- STL: [keso-gear-adapter.stl](keso-gear-adapter.stl)
