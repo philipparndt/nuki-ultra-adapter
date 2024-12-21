@@ -1,0 +1,5 @@
+.idea/
+*.afdesign
+
+*.afdesign~lock~
+.DS_Store
