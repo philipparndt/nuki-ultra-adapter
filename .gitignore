@@ -4,3 +4,4 @@
 *.afphoto~lock~
 *.afdesign~lock~
 .DS_Store
+out/
