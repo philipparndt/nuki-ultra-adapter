@@ -1,4 +1,4 @@
-# nuke-ultra-adapter
+# nuki-ultra-adapter
 
 The goal of this project is to create adapters for the smart lock ultra.
 
