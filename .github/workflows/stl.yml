@@ -1,0 +1,27 @@
+name: Build STL
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      - uses: actions/checkout@v4
+      
+      - uses: pkoehlers/openscad-build-action@v1
+        with:
+          input-file: 'base-plate.scad'
+          output-file: 'base-plate'
+
+      - uses: pkoehlers/openscad-build-action@v1
+        with:
+          input-file: 'keso-gear-adapter.scad'
+          output-file: 'base-plate'
