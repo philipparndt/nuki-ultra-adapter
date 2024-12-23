@@ -15,13 +15,11 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - uses: actions/checkout@v4
-      
-      - uses: pkoehlers/openscad-build-action@v1
-        with:
-          input-file: 'base-plate.scad'
-          output-file: 'base-plate'
 
-      - uses: pkoehlers/openscad-build-action@v1
-        with:
-          input-file: 'keso-gear-adapter.scad'
-          output-file: 'base-plate'
+      - name: Install OpenSCAD
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y openscad
+      
+      - name: Build models
+        run: ./build.sh
