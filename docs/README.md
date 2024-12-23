@@ -12,14 +12,14 @@ Use the models at your own risk. I am not responsible for any damage or harm cau
 
 - 32 Tooth
 
-![./img/Gear 1](./nuki-gear-1.png)
-![./img/Gear 2](./nuki-gear-2.png)
-![./img/Gear 2](./nuki-gear-3.png)
+![Gear 1](./img/nuki-gear-1.png)
+![Gear 2](./img/nuki-gear-2.png)
+![Gear 2](./img/nuki-gear-3.png)
 
 
 #### Self-made Gear
 
-![./img/gear-test.png](gear-test.png)
+![gear-test](./img/gear-test.png)
 
 ## Keso 8000 Adapter
 
