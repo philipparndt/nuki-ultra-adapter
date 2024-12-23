@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Check if OpenSCAD is installed
 if ! command -v openscad &> /dev/null; then
