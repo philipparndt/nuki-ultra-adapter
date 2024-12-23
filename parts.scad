@@ -33,6 +33,10 @@ module boreHoles(diameter, depth, boreHoleDistance) {
     }
 }
 
+Mtolerance = 0.1;
+M5size = 7.8;
+
+function M5() = M5size + Mtolerance;
 
 module hexHole(flatToFlatDistance, depth) {
     previewOptimize = 0.1;

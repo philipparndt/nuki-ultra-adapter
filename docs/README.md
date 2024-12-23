@@ -6,6 +6,16 @@ I use a `Keso 8000` Lock, that I like to use with the Nuki Ultra.
 
 Use the models at your own risk. I am not responsible for any damage or harm caused by using the models.
 
+## Prototype
+
+### Base Plate
+![base back](./img/base-back.png)
+![base front](./img/base-front.png)
+
+### Keso Adapter
+![Keso Adapter 1](./img/keso-gear-adapter.png)
+![Keso Adapter 1](./img/keso-gear-adapter-2.png)
+
 ## Nuki Ultra Parts
 
 ### Gear
