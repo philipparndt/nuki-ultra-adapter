@@ -29,6 +29,9 @@ Use the models at your own risk. I am not responsible for any damage or harm cau
 
 #### Self-made Gear
 
+This is a test image to see if the shape of the self-made gear fits the original gear.
+It is almost perfect.
+
 ![gear-test](./img/gear-test.png)
 
 ## Keso 8000 Adapter
