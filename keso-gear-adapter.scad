@@ -8,6 +8,27 @@ spokeCount=8;           // Number of spokes
 fn = 150;               // Cylinder resolution
 
 
+// Bevel-Abzugs-Modul
+module hollow_cone() {
+    height = 20;              // Höhe des Kegels
+    wallThickness = 10;        // Wandstärke
+    rOut=16.8/2;
+    outerRadius = rOut + wallThickness;         // Außenradius
+    innerRadius = rOut; // Berechnung des Innenradius
+
+    mirror([0, 0, 1]) {
+        difference() {
+            // Äußerer Kegel
+            cylinder(h = height, r1 = outerRadius, r2 = 0, center = false);
+
+            // Innerer Kegel (wird subtrahiert)
+            translate([0, 0, -wallThickness]) { // Wandstärke am Boden berücksichtigen
+                cylinder(h = height, r1 = outerRadius, r2 = 0, center = false);
+            }
+        }
+    }
+}
+
 difference() {
     union() {
         gearCutOut=12;
@@ -24,6 +45,11 @@ difference() {
                 translate([0,0,-0.01]) {
                     cylinder(d = gearCutOut, h = gearHeight + 0.02, center = false, $fn = fn);
                 }
+
+                translate([0,0,1.3]) {
+                    hollow_cone();
+                }
+
             }
         }
 
