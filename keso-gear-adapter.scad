@@ -9,21 +9,15 @@ fn = 150;               // Cylinder resolution
 
 
 // Bevel-Abzugs-Modul
-module hollow_cone() {
+module hollow_cone(r) {
     height = 20;              // Höhe des Kegels
-    wallThickness = 10;        // Wandstärke
-    rOut=16.8/2;
-    outerRadius = rOut + wallThickness;         // Außenradius
-    innerRadius = rOut; // Berechnung des Innenradius
+    wallThickness = 5;        // Wandstärke
 
     mirror([0, 0, 1]) {
         difference() {
-            // Äußerer Kegel
-            cylinder(h = height, r1 = outerRadius, r2 = 0, center = false);
-
-            // Innerer Kegel (wird subtrahiert)
-            translate([0, 0, -wallThickness]) { // Wandstärke am Boden berücksichtigen
-                cylinder(h = height, r1 = outerRadius, r2 = 0, center = false);
+            cylinder(h = height, r1 = r + wallThickness, r2 = 0, center = false, $fn = fn);
+            translate([0, 0, -0.01]) {
+                cylinder(h = height - wallThickness, r1 = r, r2 = 0, center = false, $fn = fn);
             }
         }
     }
@@ -35,8 +29,8 @@ difference() {
         color([1, 0, 0]) {
             difference() {
                 // Star Gear
+                rOut=16.8/2;
                 linear_extrude(height=gearHeight, center=false) {
-                    rOut=16.8/2;
                     tLength=1; // tooth length
                     Stern(e=32, r1=rOut, r2=rOut-tLength, mod=4, delta=0, center=0, help=false);
                 }
@@ -46,8 +40,8 @@ difference() {
                     cylinder(d = gearCutOut, h = gearHeight + 0.02, center = false, $fn = fn);
                 }
 
-                translate([0,0,1.3]) {
-                    hollow_cone();
+                translate([0,0,0.5]) {
+                    hollow_cone(rOut + .1); // add .1 as the cone is a circle and the gear is not
                 }
 
             }
