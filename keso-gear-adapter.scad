@@ -1,11 +1,12 @@
 use <./gear/ub.scad>
 
 gearHeight=4.2;         // Height of the gear
-distance=1.5;           // Distance between the gear and the adapter plate
-totalHeight=10;         // Total height of the adapter including the gear
+distance=0.7999;        // Distance between the gear and the adapter plate
+totalHeight=11;         // Total height of the adapter including the gear
 spokeDiameter=1.8;      // Diameter of the spokes (sporkes will work as torque limiters and shall break before the gear)
 spokeCount=8;           // Number of spokes
 fn = 150;               // Cylinder resolution
+
 
 difference() {
     union() {
@@ -18,9 +19,11 @@ difference() {
                     tLength=1; // tooth length
                     Stern(e=32, r1=rOut, r2=rOut-tLength, mod=4, delta=0, center=0, help=false);
                 }
-                
+
                 // Cut Out a circle
-                cylinder(d=gearCutOut, h=5, center=true, $fn=fn);
+                translate([0,0,-0.01]) {
+                    cylinder(d = gearCutOut, h = gearHeight + 0.02, center = false, $fn = fn);
+                }
             }
         }
 
@@ -41,7 +44,7 @@ difference() {
                 }
             }
         }
-        
+
         // Extension
         translate([0,0,gearHeight + distance]) {
             cylinder(d=13, h=totalHeight-gearHeight-distance, center=false, $fn=fn);
