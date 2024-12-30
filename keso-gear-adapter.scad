@@ -7,11 +7,9 @@ spokeDiameter=1.8;      // Diameter of the spokes (sporkes will work as torque l
 spokeCount=8;           // Number of spokes
 fn = 150;               // Cylinder resolution
 
-
-// Bevel-Abzugs-Modul
 module hollow_cone(r) {
-    height = 20;              // Höhe des Kegels
-    wallThickness = 5;        // Wandstärke
+    height = 20;
+    wallThickness = 5;
 
     mirror([0, 0, 1]) {
         difference() {
