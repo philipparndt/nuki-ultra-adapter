@@ -52,6 +52,6 @@ It is almost perfect.
 
 ## Keso 8000 Adapter
 
-- Status: `Prototype ordered`
+- Status: `Prototype in use`, final version `ordered`
 - OpenSCAD: [../keso-gear-adapter.scad](keso-gear-adapter.scad)
 - STL: [../keso-gear-adapter.stl](keso-gear-adapter.stl)
