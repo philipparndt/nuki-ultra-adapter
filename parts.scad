@@ -33,6 +33,21 @@ module boreHoles(diameter, depth, boreHoleDistance) {
     }
 }
 
+module countersinkHoles(diameter, depth, boreHoleDistance) {
+    previewOptimize=.1;
+    translate([-boreHoleDistance/2, 0, -depth]) {
+        translate([0, 0, -previewOptimize]) {
+            cylinder(r1=0, r2=diameter/2, h=depth, center=false, $fn=100);
+        }
+
+        translate([boreHoleDistance, 0, 0]) {
+            translate([0, 0, -previewOptimize]) {
+                cylinder(r1=0, r2=diameter/2, h=depth, center=false, $fn=100);
+            }
+        }
+    }
+}
+
 Mtolerance = 0.1;
 M5size = 7.8;
 
