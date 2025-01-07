@@ -24,7 +24,7 @@ fi
 
 # Render the SCAD file to STL
 echo "Rendering '$INPUT_FILE' to '$OUTPUT_FILE'..."
-openscad -o "$OUTPUT_FILE" "$INPUT_FILE"
+openscad --export-format binstl -o "$OUTPUT_FILE" "$INPUT_FILE"
 
 if [ $? -eq 0 ]; then
     echo "Successfully rendered to '$OUTPUT_FILE'."

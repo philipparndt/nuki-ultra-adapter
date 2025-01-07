@@ -44,7 +44,7 @@ module base(totalHeight, cylinder_diameter, cylinderZ) {
         // Guides
         if (guides) {
             translate([0, 0, -guidesHeight]) {
-                boreHoles(diameter=guidesDiameter, depth=hguidesHeight, boreHoleDistance=boreHoleDistance);
+                boreHoles(diameter=guidesDiameter, depth=guidesHeight, boreHoleDistance=boreHoleDistance);
             }
         }
     }
