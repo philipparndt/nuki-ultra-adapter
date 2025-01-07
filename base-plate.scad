@@ -77,8 +77,14 @@ difference() {
         boreHoles(diameter = 5.1, depth = Z*2, boreHoleDistance = boreHoleDistance);
     }
 
-    translate([0, 0, 4]) {
+    keepMaterial=4;
+    translate([0, 0, keepMaterial]) {
         boreHoles(diameter = 9.5, depth = Z, boreHoleDistance = boreHoleDistance);
+    }
+
+    // Countersink hole
+    translate([0, 0, keepMaterial + .001]) {
+        countersinkHoles(diameter = 9.5, depth = 3, boreHoleDistance = boreHoleDistance);
     }
 
     // Save some material
