@@ -12,6 +12,22 @@ Use the models at your own risk. I am not responsible for any damage or harm cau
 ![base back](./img/base-back.png)
 ![base front](./img/base-front.png)
 
+#### Settings
+
+##### Lock distance
+
+To print your own Base Plate, you need to measure and update the `LockDistance` variable in [base-plate.scad](../base-plate.scad)
+
+![LockDistance](./img/lock-distance.png)
+
+##### Guides
+
+Guides can be enabled using `guides=true;`. I have not tested this yet.
+
+##### Cheaper Print
+
+Set `cheaperPrint=true;` to remove some material. I have not tested this yet.
+
 ### Keso Adapter
 ![Keso Adapter 1](./img/keso-gear-adapter.png)
 ![Keso Adapter 1](./img/keso-gear-adapter-2.png)
