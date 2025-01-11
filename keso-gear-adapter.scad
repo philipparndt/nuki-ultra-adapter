@@ -3,8 +3,8 @@ use <./gear/ub.scad>
 gearHeight=4.2;         // Height of the gear
 distance=0.7999;        // Distance between the gear and the adapter plate
 totalHeight=11;         // Total height of the adapter including the gear
-spokeDiameter=1.8;      // Diameter of the spokes (sporkes will work as torque limiters and shall break before the gear)
-spokeCount=8;           // Number of spokes
+spokeDiameter=2.2;      // Diameter of the spokes (sporkes will work as torque limiters and shall break before the gear)
+spokeCount=10;          // Number of spokes
 fn = 150;               // Cylinder resolution
 
 
@@ -53,6 +53,11 @@ difference() {
 
     // Substracting Keso specific holes
     keso(totalHeight);
+
+    // Version number
+    translate([0,4.1,totalHeight]) {
+        text("0.2", size=1.5, halign="center",$fn=50);
+    }
 }
 
 // -----------------------------------
