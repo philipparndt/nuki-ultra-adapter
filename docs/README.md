@@ -12,6 +12,8 @@ Use the models at your own risk. I am not responsible for any damage or harm cau
 ![base back](./img/base-back.png)
 ![base front](./img/base-front.png)
 
+Printed with `JLC Black Resin`
+
 #### Settings
 
 ##### Lock distance
@@ -49,6 +51,8 @@ This is a test image to see if the shape of the self-made gear fits the original
 It is almost perfect.
 
 ![gear-test](./img/gear-test.png)
+
+Printed with `LEDO 6060 Resin`
 
 ## Keso 8000 Adapter
 
