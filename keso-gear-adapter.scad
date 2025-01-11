@@ -55,8 +55,9 @@ difference() {
     keso(totalHeight);
 
     // Version number
-    translate([0,4.1,totalHeight]) {
-        text("0.2", size=1.5, halign="center",$fn=50);
+    translate([0,4.1,totalHeight-0.5]) {
+        linear_extrude(1)
+            text("0.2", size=1.5, halign="center",$fn=50);
     }
 }
 
