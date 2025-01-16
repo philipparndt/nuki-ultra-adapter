@@ -3,11 +3,10 @@ use <./parts.scad>
 // You need to update this for your cylinder
 LockDistance=16;
 
-// Reduce the height in the bottom part (0 = no reduction)
-bottomOffset=0;
+smallVariant=true;
 
-// Add some guides to provide solid connection with the door (untested)
-guides=false;
+// Add some guides to provide solid connection with the door
+guides=true;
 guidesHeight = 6;
 guidesDiameter = 7;
 
@@ -20,10 +19,13 @@ totalHeight=60;
 // Parameters for the cylinders
 cylinder_diameter = 52;
 
-boreHoleDistance=37.5; // TODO: should this be 38?
+boreHoleDistance=38;
 
 // Calculate final depth of the base plate
 Z=LockDistance - 0.1;
+
+// Reduce the height in the bottom part (0 = no reduction)
+bottomOffset=smallVariant ? LockDistance : 0;
 
 module base(totalHeight, cylinder_diameter, cylinderZ) {
     center_distance = totalHeight - cylinder_diameter;
@@ -31,7 +33,28 @@ module base(totalHeight, cylinder_diameter, cylinderZ) {
     union() {
         // Top cylinder
         translate([0, center_distance, 0]) {
-            cylinder(d=cylinder_diameter, h=cylinderZ, center=false, $fn=400);
+            cylinder(d=smallVariant ? 57 : cylinder_diameter, h=cylinderZ, center=false, $fn=400);
+        }
+
+        if (smallVariant) {
+            brim_width=2.5;
+            brim_height=2.5;
+            start_angle=235;
+            gap_angle=20;
+            gap_angle_s=40;
+
+            translate([0, center_distance, 0])
+                rotate([0,0,start_angle+gap_angle_s-gap_angle])
+                    rotate_extrude($fn = 1000, angle = 360-gap_angle_s)
+                        translate([(57 / 2 - brim_width), cylinderZ, 0])
+                            polygon(points = [[0, 0], [brim_width, 0], [brim_width, brim_height], [brim_width - 1, brim_height]]);
+
+
+            translate([0, center_distance, 0])
+                rotate([0,0,start_angle])
+                    rotate_extrude($fn = 1000, angle = 360-gap_angle)
+                        translate([(57 / 2 - brim_width), cylinderZ, 0])
+                            polygon(points = [[brim_width - 1, 0], [brim_width, 0], [brim_width, brim_height], [brim_width - 1, brim_height]]);
         }
 
         // Bottom cylinder
@@ -61,7 +84,6 @@ difference() {
     translate([0, 0, -previewOptimize]) {
         lock(topDiameter = 18, bottomDiameter = 10, height = 33.5, depth=Z + previewOptimize*2);
     }
-
 
     // Holes of the Top Plate
     translate([0, center_distance, 0]) {
