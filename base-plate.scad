@@ -42,17 +42,18 @@ module base(totalHeight, cylinder_diameter, cylinderZ) {
             start_angle=235;
             gap_angle=20;
             gap_angle_s=40;
+            rotate_fn=500;
 
             translate([0, center_distance, 0])
                 rotate([0,0,start_angle+gap_angle_s-gap_angle])
-                    rotate_extrude($fn = 1000, angle = 360-gap_angle_s)
+                    rotate_extrude($fn = rotate_fn, angle = 360-gap_angle_s)
                         translate([(57 / 2 - brim_width), cylinderZ, 0])
                             polygon(points = [[0, 0], [brim_width, 0], [brim_width, brim_height], [brim_width - 1, brim_height]]);
 
 
             translate([0, center_distance, 0])
                 rotate([0,0,start_angle])
-                    rotate_extrude($fn = 1000, angle = 360-gap_angle)
+                    rotate_extrude($fn = rotate_fn, angle = 360-gap_angle)
                         translate([(57 / 2 - brim_width), cylinderZ, 0])
                             polygon(points = [[brim_width - 1, 0], [brim_width, 0], [brim_width, brim_height], [brim_width - 1, brim_height]]);
         }
