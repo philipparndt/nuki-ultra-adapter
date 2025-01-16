@@ -9,6 +9,15 @@ Use the models at your own risk. I am not responsible for any damage or harm cau
 ## Prototype
 
 ### Base Plate
+
+with `nukiSize=true` you will get a long version, that covers only space for the Nuki lock.
+This will also be a little bigger, to perfectly match the Nuki lock.
+
+![base-plate-small-variant](./img/base-plate-nuki-size.png)
+
+with `nukiSize=false` you will get a long version, that covers the Base Plate of a classic lock, as well as the 
+extra space for the Nuki lock.  
+
 ![base back](./img/base-back.png)
 ![base front](./img/base-front.png)
 
