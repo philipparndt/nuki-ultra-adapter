@@ -39,32 +39,27 @@ Guides can be enabled using `guides=true;`. I have not tested this yet.
 
 Set `cheaperPrint=true;` to remove some material. I have not tested this yet.
 
-### Keso Adapter
-![Keso Adapter 1](./img/keso-gear-adapter.png)
-![Keso Adapter 1](./img/keso-gear-adapter-2.png)
-
-## Nuki Ultra Parts
-
-### Gear
-
-- 32 Tooth
-
-![Gear 1](./img/nuki-gear-1.png)
-![Gear 2](./img/nuki-gear-2.png)
-![Gear 2](./img/nuki-gear-3.png)
-
-
-#### Self-made Gear
-
-This is a test image to see if the shape of the self-made gear fits the original gear.
-It is almost perfect.
-
-![gear-test](./img/gear-test.png)
-
-Printed with `LEDO 6060 Resin`
-
 ## Keso 8000 Adapter
 
 - Status: `Prototype in use`, final version `ordered`
 - OpenSCAD: [../keso-gear-adapter.scad](keso-gear-adapter.scad)
 - STL: [../keso-gear-adapter.stl](keso-gear-adapter.stl)
+
+![Keso Adapter 1](./img/keso-gear-adapter.png)
+![Keso Adapter 1](./img/keso-gear-adapter-2.png)
+
+## Abus Adapter
+
+You have to add `2.5mm` extra space to the Base Plate for the Asus adapter.
+
+**Currently in development / Untested**
+
+- OpenSCAD: [../abus-gear-adapter.scad](keso-gear-adapter.scad)
+- STL: [../abus-gear-adapter.stl](keso-gear-adapter.stl)
+
+![Abus Adapter 1](./img/abus-gear-adapter.png)
+![Abus Adapter 1](./img/abus-gear-adapter-2.png)
+
+## Development
+
+[DEVELOPMENT](DEVELOPMENT.md)
