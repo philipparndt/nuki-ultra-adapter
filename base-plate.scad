@@ -28,6 +28,8 @@ Z=LockDistance - 0.1;
 // Reduce the height in the bottom part (0 = no reduction)
 bottomOffset=nukiSize ? LockDistance : 0;
 
+topHolesDepth=2;
+
 fn=400;
 
 module base(totalHeight, cylinder_diameter, cylinderZ) {
@@ -42,12 +44,12 @@ module base(totalHeight, cylinder_diameter, cylinderZ) {
         if (nukiSize) {
             brim_width=2.5;
             brim_height=2.5;
-            start_angle=235;
+            start_angle=233;
             gap_angle=20;
-            gap_angle_s=40;
+            gap_angle_s=45;
 
             translate([0, center_distance, 0])
-                rotate([0,0,start_angle+gap_angle_s-gap_angle])
+                rotate([0,0,start_angle+gap_angle_s-gap_angle-5])
                     rotate_extrude($fn = fn, angle = 360-gap_angle_s)
                         translate([(57 / 2 - brim_width), cylinderZ, 0])
                             polygon(points = [[0, 0], [brim_width, 0], [brim_width, brim_height], [brim_width - 1, brim_height]]);
@@ -93,13 +95,16 @@ difference() {
         boreHoles(diameter=5.1, depth=Z, boreHoleDistance=boreHoleDistance);
 
         translate([0, 0, 0]) {
-            boreHexHoles(flatToFlatDistance = M5(), depth = Z -4, boreHoleDistance = boreHoleDistance);
+            depth = Z - topHolesDepth;
+            assert(depth >= 3.9, "hex holes too small, reduce topHolesDepth");
+            assert(topHolesDepth >= 2, "topHolesDepth to small - will not be stable");
+            boreHexHoles(flatToFlatDistance = M5(), depth = depth, boreHoleDistance = boreHoleDistance);
         }
     }
 
     // Holes of the Bottom Plate
-    translate([0, 0, -Z]) {
-        boreHoles(diameter = 5.1, depth = Z*2, boreHoleDistance = boreHoleDistance);
+    translate([0, 0, -Z-1]) {
+        boreHoles(diameter = 5.1, depth = Z*2 + 1, boreHoleDistance = boreHoleDistance);
     }
 
     keepMaterial=4;
