@@ -7,6 +7,19 @@ spokeDiameter=2.2;      // Diameter of the spokes (sporkes will work as torque l
 spokeCount=10;          // Number of spokes
 fn = 150;               // Cylinder resolution
 
+module hollow_cone(r) {
+    height = 20;
+    wallThickness = 5;
+
+    mirror([0, 0, 1]) {
+        difference() {
+            cylinder(h = height, r1 = r + wallThickness, r2 = 0, center = false, $fn = fn);
+            translate([0, 0, -0.01]) {
+                cylinder(h = height - wallThickness, r1 = r, r2 = 0, center = false, $fn = fn);
+            }
+        }
+    }
+}
 
 difference() {
     union() {
@@ -14,8 +27,8 @@ difference() {
         color([1, 0, 0]) {
             difference() {
                 // Star Gear
+                rOut=16.8/2;
                 linear_extrude(height=gearHeight, center=false) {
-                    rOut=16.8/2;
                     tLength=1; // tooth length
                     Stern(e=32, r1=rOut, r2=rOut-tLength, mod=4, delta=0, center=0, help=false);
                 }
@@ -24,6 +37,11 @@ difference() {
                 translate([0,0,-0.01]) {
                     cylinder(d = gearCutOut, h = gearHeight + 0.02, center = false, $fn = fn);
                 }
+
+                translate([0,0,0.5]) {
+                    hollow_cone(rOut + .1); // add .1 as the cone is a circle and the gear is not
+                }
+
             }
         }
 
