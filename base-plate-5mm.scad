@@ -1,7 +1,7 @@
 use <./parts.scad>
 
 // You need to update this for your cylinder
-LockDistance=6;
+LockDistance=5;
 
 // Enable to cover only the size of the Nuki Ultra and not the classic lock size
 nukiSize=true;
@@ -107,7 +107,7 @@ difference() {
         boreHoles(diameter = 5.1, depth = Z*2 + 1, boreHoleDistance = boreHoleDistance);
     }
 
-    keepMaterial=5;
+    keepMaterial=4;
     translate([0, 0, keepMaterial]) {
         boreHoles(diameter = 9.5, depth = Z, boreHoleDistance = boreHoleDistance);
     }
