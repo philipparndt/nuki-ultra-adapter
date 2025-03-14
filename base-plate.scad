@@ -42,11 +42,11 @@ module base(totalHeight, cylinder_diameter, cylinderZ) {
         }
 
         if (nukiSize) {
-            brim_width=2.5;
-            brim_height=2.5;
-            start_angle=233;
-            gap_angle=20;
-            gap_angle_s=45;
+            brim_width=2.4;
+            brim_height=2.4;
+            start_angle=232;
+            gap_angle=25;
+            gap_angle_s=60;
 
             translate([0, center_distance, 0])
                 rotate([0,0,start_angle+gap_angle_s-gap_angle-5])
