@@ -1,7 +1,7 @@
 use <./parts.scad>
 
 // You need to update this for your cylinder
-LockDistance=5;
+LockDistance=6;
 
 // Enable to cover only the size of the Nuki Ultra and not the classic lock size
 nukiSize=true;
