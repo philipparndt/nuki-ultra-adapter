@@ -60,6 +60,21 @@ You have to add `2.5mm` extra space to the Base Plate for the Asus adapter.
 ![Abus Adapter 1](./img/abus-gear-adapter.png)
 ![Abus Adapter 1](./img/abus-gear-adapter-2.png)
 
+## Mul-T-Lock / Israeli Knob Cylinder Adapter
+
+For doors where the Nuki Universal Cylinder that ships with the Ultra doesn't fit, e.g. Israeli doors that
+need a geared Mul-T-Lock style cylinder. The adapter replaces the yellow Nuki gear and sits on the existing
+cylinder's knob shaft, held by the knob's own set screw. Mount the Nuki with Nuki's
+`Mounting plate A Europrofile Smart Lock Pro` instead of the base plate above.
+
+- Status: `In use`
+- Guide: [MTL.md](MTL.md)
+- OpenSCAD: [../mtl-gear-adapter.scad](../mtl-gear-adapter.scad)
+- STL (FDM): [../mtl-gear-adapter-fdm.stl](../mtl-gear-adapter-fdm.stl)
+- STL (SLA / SLS / MJF): [../mtl-gear-adapter.stl](../mtl-gear-adapter.stl)
+
+![MTL Adapter](./img/mtl-gear-adapter.png)
+
 ## Development
 
 [DEVELOPMENT](DEVELOPMENT.md)

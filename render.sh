@@ -7,14 +7,15 @@ if ! command -v openscad &> /dev/null; then
 fi
 
 # Check for input arguments
-if [ "$#" -ne 2 ]; then
-    echo "Usage: $0 input.scad output.stl"
+if [ "$#" -lt 2 ]; then
+    echo "Usage: $0 input.scad output.stl [openscad args...]"
     exit 1
 fi
 
 # Input and output file paths
 INPUT_FILE="$1"
 OUTPUT_FILE="$2"
+shift 2
 
 # Check if the input file exists
 if [ ! -f "$INPUT_FILE" ]; then
@@ -24,7 +25,7 @@ fi
 
 # Render the SCAD file to STL
 echo "Rendering '$INPUT_FILE' to '$OUTPUT_FILE'..."
-openscad --export-format binstl -o "$OUTPUT_FILE" "$INPUT_FILE"
+openscad --export-format binstl -o "$OUTPUT_FILE" "$@" "$INPUT_FILE"
 
 if [ $? -eq 0 ]; then
     echo "Successfully rendered to '$OUTPUT_FILE'."
